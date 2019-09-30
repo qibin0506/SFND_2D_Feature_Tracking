@@ -11,6 +11,30 @@ The idea of the camera course is to build a collision detection system - that's 
 
 See the classroom instruction and code comments for more details on each of these parts. Once you are finished with this project, the keypoint matching part will be set up and you can proceed to the next lesson, where the focus is on integrating Lidar points and on object detection using deep-learning. 
 
+## Rubric
+
+1. MP.1 Data Buffer Optimization
+> I use a method names `erase` to ensure the size of dataBuffer less than or equal 2.
+
+2. MP.2 Keypoint Detection
+> For detection method, I write 7 method for each detection method of SHITOMASI, HARRIS, FAST, BRISK, ORB, AKAZE, SIFT.
+
+3. MP.3 Keypoint Removal
+> I determined the ROI by using a method names `contains` of `Rect` class, and put the result to a new vector.
+
+4. MP.4 Keypoint Descriptors
+> My implemention of descriptors is using the opencv's method in `descKeypoints` function.
+
+5. MP.5 Descriptor Matching
+> First, I convert `descSource` and `descRef` to `CV_32F` when the type of `descSource` is not `CV_32F`. Then, use the `knnMatch` method from opencv to match the result.
+
+6. MP.6 Descriptor Distance Ratio
+> For `knn match` algorithm, I set ratio to `0.8` and use the code `knn_matches[i][0].distance < ratio * knn_matches[i][1].distance` to filter result.
+
+7. MP.7 Performance Evaluation 1, MP.8 Performance Evaluation 2, MP.9 Performance Evaluation 3
+My Result at [https://drive.google.com/open?id=1Q5G8rdBjI1QjRTCYiGcSzEKOnsv9eynE](https://drive.google.com/open?id=1Q5G8rdBjI1QjRTCYiGcSzEKOnsv9eynE)
+
+
 ## Result
 Time of extractor and descriptor at [https://drive.google.com/open?id=1Q5G8rdBjI1QjRTCYiGcSzEKOnsv9eynE](https://drive.google.com/open?id=1Q5G8rdBjI1QjRTCYiGcSzEKOnsv9eynE).
 
